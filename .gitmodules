@@ -1,0 +1,36 @@
+[submodule "01"]
+	path = modules/01
+	url = https://github.com/oidoid/01.git
+	branch = .
+[submodule "aseprite-atlas"]
+	path = modules/aseprite-atlas
+	url = https://github.com/oidoid/aseprite-atlas.git
+	branch = .
+[submodule "klondike-solitaire"]
+	path = modules/klondike-solitaire
+	url = https://github.com/oidoid/klondike-solitaire.git
+	branch = .
+[submodule "matoid"]
+	path = modules/matoid
+	url = https://github.com/oidoid/matoid.git
+	branch = .
+[submodule "mem"]
+	path = modules/mem
+	url = https://github.com/oidoid/mem.git
+	branch = .
+[submodule "nature-elsewhere"]
+	path = modules/nature-elsewhere
+	url = https://github.com/oidoid/nature-elsewhere.git
+	branch = .
+[submodule "natureelsewhere.com"]
+	path = modules/natureelsewhere.com
+	url = https://github.com/oidoid/natureelsewhere.com.git
+	branch = .
+[submodule "nttt"]
+	path = modules/nttt
+	url = https://github.com/oidoid/nttt.git
+	branch = .
+[submodule "oidoid.com"]
+	path = modules/oidoid.com
+	url = https://github.com/oidoid/oidoid.com.git
+	branch = .
