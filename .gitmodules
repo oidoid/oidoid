@@ -1,36 +1,52 @@
 [submodule "01"]
-	path = modules/01
+	path = 01
 	url = https://github.com/oidoid/01.git
-	branch = master
-[submodule "aseprite-atlas"]
-	path = modules/aseprite-atlas
-	url = https://github.com/oidoid/aseprite-atlas.git
-	branch = master
-[submodule "klondike-solitaire"]
-	path = modules/klondike-solitaire
-	url = https://github.com/oidoid/klondike-solitaire.git
-	branch = master
-[submodule "matoid"]
-	path = modules/matoid
-	url = https://github.com/oidoid/matoid.git
-	branch = master
+	branch = main
+[submodule "atlas-pack"]
+	path = atlas-pack
+	url = https://github.com/oidoid/atlas-pack.git
+	branch = main
+[submodule "linear-text"]
+	path = linear-text
+	url = https://github.com/oidoid/linear-text.git
+	branch = main
+[submodule "lineartext.com"]
+	path = lineartext.com
+	url = https://github.com/oidoid/lineartext.com.git
+	branch = main
 [submodule "mem"]
-	path = modules/mem
+	path = mem
 	url = https://github.com/oidoid/mem.git
-	branch = master
+	branch = main
+[submodule "natural"]
+	path = natural
+	url = https://github.com/oidoid/natural.git
+	branch = main
 [submodule "nature-elsewhere"]
-	path = modules/nature-elsewhere
+	path = nature-elsewhere
 	url = https://github.com/oidoid/nature-elsewhere.git
-	branch = master
+	branch = main
 [submodule "natureelsewhere.com"]
-	path = modules/natureelsewhere.com
+	path = natureelsewhere.com
 	url = https://github.com/oidoid/natureelsewhere.com.git
-	branch = master
+	branch = main
 [submodule "nttt"]
-	path = modules/nttt
+	path = nttt
 	url = https://github.com/oidoid/nttt.git
-	branch = master
+	branch = main
+[submodule "oidlib"]
+	path = oidlib
+	url = https://github.com/oidoid/oidlib.git
+	branch = main
 [submodule "oidoid.com"]
-	path = modules/oidoid.com
+	path = oidoid.com
 	url = https://github.com/oidoid/oidoid.com.git
-	branch = master
+	branch = main
+[submodule "solitaire"]
+	path = solitaire
+	url = https://github.com/oidoid/solitaire.git
+	branch = main
+[submodule "sublime-solitaire"]
+	path = sublime-solitaire
+	url = https://github.com/oidoid/sublime-solitaire.git
+	branch = main

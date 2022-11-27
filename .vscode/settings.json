@@ -1,0 +1,16 @@
+{
+  "deno.enable": true,
+  // [repos]
+  "deno.enablePaths": [
+    "atlas-pack",
+    "mem",
+    "natural",
+    "nttt",
+    "oidlib",
+    "solitaire",
+    "sublime-solitaire"
+  ],
+  "deno.lint": true,
+  "deno.importMap": "mods.json",
+  "editor.defaultFormatter": "denoland.vscode-deno"
+}

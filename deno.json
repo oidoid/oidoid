@@ -1,0 +1,30 @@
+{
+  // https://deno.land/manual@main/typescript/configuration
+  "compilerOptions": {
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "useUnknownInCatchVariables": true,
+    "lib": ["dom", "deno.ns"]
+  },
+  "fmt": {
+    "files": {
+      "exclude": ["dist", "mem/dist", "linear-text", "nature-elsewhere"]
+    },
+    "options": { "singleQuote": true }
+  },
+  "importMap": "mods.json",
+  "lint": {
+    "files": {
+      "exclude": ["dist", "mem/dist", "linear-text", "nature-elsewhere"]
+    },
+    "rules": { "exclude": ["no-empty-interface", "no-namespace"] }
+  },
+  "test": {
+    "files": {
+      "exclude": ["dist", "mem/dist", "linear-text", "nature-elsewhere"]
+    }
+  }
+}
