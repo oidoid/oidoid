@@ -18,9 +18,9 @@
 	path = mem
 	url = https://github.com/oidoid/mem.git
 	branch = main
-[submodule "natural"]
-	path = natural
-	url = https://github.com/oidoid/natural.git
+[submodule "void"]
+	path = void
+	url = ./void
 	branch = main
 [submodule "nature-elsewhere"]
 	path = nature-elsewhere

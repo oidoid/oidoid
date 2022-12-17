@@ -4,11 +4,11 @@
   "deno.enablePaths": [
     "atlas-pack",
     "mem",
-    "natural",
     "nttt",
     "oidlib",
     "solitaire",
-    "sublime-solitaire"
+    "sublime-solitaire",
+    "void"
   ],
   "deno.lint": true,
   "deno.importMap": "mods.json",

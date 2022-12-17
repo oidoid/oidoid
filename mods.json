@@ -2,11 +2,11 @@
   "imports": {
     "@/atlas-pack": "./atlas-pack/mod.ts",
     "@/mem": "./mem/mod.ts",
-    "@/natural": "./natural/mod.ts",
     "@/nttt": "./nttt/mod.ts",
     "@/oidlib": "./oidlib/mod.ts",
     "@/solitaire": "./solitaire/mod.ts",
     "@/sublime-solitaire": "./sublime-solitaire/mod.ts",
+    "@/void": "./void/mod.ts",
     "std/": "https://deno.land/std@0.159.0/"
   }
 }

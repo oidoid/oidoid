@@ -4,11 +4,11 @@ include oidlib/config.make
 make_repos := \
 	atlas-pack \
 	mem \
-  natural \
   nttt \
   oidlib \
   solitaire \
-	sublime-solitaire
+	sublime-solitaire \
+  void
 repos := \
   $(make_repos) \
   01 \
@@ -39,9 +39,9 @@ link_dist_repos := $(filter-out $(link_root_repos) $(link_build_repos),$(repos))
 # Repos that only use watch:bundle for watch.
 watch_bundle_repos := \
   oidlib \
-  natural \
   nttt \
-  solitaire
+  solitaire \
+  void
 
 .PHONY: build
 build: $(make_repos:%=build\:%) | $(dist_links)
