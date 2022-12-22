@@ -1,0 +1,74 @@
+Clean
+  Resolve all uncommited changes. The monorepo needs to be totally unambiguous.
+  Finish reviewing old NE TypeScript branch and delete folder.
+  Review NE devlog and delete folder and commit that.
+  Delete or archive encumber and old niedzielski and oidoid repos. This should be curated.
+  Compare all the repos.
+  Update all GitHub repo settings.
+  Check all the licenses.
+  Replace throws with assert.
+  Drop needless Uint usages.
+  Align niedzielski/ parent repo.
+  Prioritize to-dos and drafts.
+  Clear Git stashes.
+
+API improvements
+  Refactor XY and Box as simplified classes. Look at old implementation. Re-review API.
+  Refactor Num to at least delete Num and Unumber. Num should maybe be BigInt with util.
+  Add config parser / factory that consumes JSON for XY, Box, Sprite, Component at least.
+  Refactor Input, InputPoller, etc as classes. API should look something like `is('On'|'Off', ...buttons: 'PrimaryButton' | 'PrimaryMouse', 'Triggered'|'Active', ...types = 'Mouse' | 'Pen')`.
+  Review old combo supported Input implementation + tests.
+  Sprite should wrap all the APIs of its constituent pieces like `isIntersecting(XY|Box|Sprite)` and `cel()` (get cel for rendering).
+  Make the ECS API a class. This should be something like new, add, query, update.
+  Review ECS.get(). This has a lot of typing but is only used internally.
+  Can I get rid of second template param to SublimeUpdate?
+  Num.ts needs I16.subClamp(), addClamp(), etc. These are in XY somehow but now lower.
+
+Nature Elsewhere
+  Fix license.text
+  AGPL-3.0-only AND no CC-BY-SA-4.0
+  Review Rust branch.
+  Revert to TypeScript branch but don't attempt to integrate with Deno monorepoid.
+
+sublime-solitaire
+  Finish all the illustrations.
+  Add webhook for x/
+  Fix issue on Joie's phone.
+  Make win occur on final card building, not reset.
+  Add dark mode support with palette swapping.
+  Test context loss.
+
+Publish
+  Get atlas-pack Netlify deployment working
+  Revise oidoid.com and niedzielski.com/works websites. Add void too.
+  Finalize oidlib and sublimesolitaire / super patience names.
+  Create sublimesolitaire.com website.
+  Add GitHub sponsorship.
+  Add Patreon sponship.
+  Add oidoid organization readme like https://github.com/hapsoc/.github.
+  Fix 01 Netlify deployment.
+
+Next
+  Tiny Asteroid-like sprite game to exercise void. Can I build it in a day? If not, what changes do I need to make?
+  Sketch out new Linear Text plan.
+
+linear-text
+  Check linear-text can build ok still.
+  Transfer package.json keywords.
+  Move to-do markdown to text.
+  Check license.text.
+
+Questions
+  How can I make the oidlib + void more library-like? Combine into ODK / TMNT SDK?
+
+API Features
+  Add Sprite grouping support and center sublime card layout. How should this work?
+  Add UI components like buttons and forms.
+  Test text rendering.
+
+Backlog
+  Explore using `git -C` instead of sub-makes.
+  Replace enum patterns with Set?
+  Apply shorthands like "string" to "str" universally.
+  Explore esbuild for bundling.
+  Review Deno std library for how it applies.
