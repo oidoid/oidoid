@@ -4,15 +4,18 @@ Clean
   Review NE devlog and delete folder and commit that.
   Delete or archive encumber and old niedzielski and oidoid repos. This should be curated.
   Compare all the repos.
-  Update all GitHub repo settings.
+  Update all GitHub repo settings including profile settings (eg, github.com/organizations/oidoid/settings/profile).
   Check all the licenses.
   Replace throws with assert.
   Drop needless Uint usages.
   Align niedzielski/ parent repo.
-  Prioritize to-dos and drafts.
+  Prioritize repo to-dos and old project drafts. At least solitaire.text (and images), linear-text.text (and images), default.text, nature-elsewhere.text (and images) and each repo's to-do's.
   Clear Git stashes.
+  Pull in any code worth saving from encumber, practice, and other repos.
 
 API improvements
+  Rework layers and bitmasks.
+  Clean up the shaders.
   Refactor XY and Box as simplified classes. Look at old implementation. Re-review API.
   Refactor Num to at least delete Num and Unumber. Num should maybe be BigInt with util.
   Add config parser / factory that consumes JSON for XY, Box, Sprite, Component at least.
@@ -23,6 +26,9 @@ API improvements
   Review ECS.get(). This has a lot of typing but is only used internally.
   Can I get rid of second template param to SublimeUpdate?
   Num.ts needs I16.subClamp(), addClamp(), etc. These are in XY somehow but now lower.
+  Document system update order for ECS. It's the order they're added.
+  Add support for input order. I think this has to be update order but also have notion of handling.
+  Explore flipping target Box bounds instead of special bits in the shader.
 
 Nature Elsewhere
   Fix license.text
@@ -38,11 +44,16 @@ sublime-solitaire
   Add dark mode support with palette swapping.
   Test context loss.
 
+oidoid
+  Update all the submodule references.
+  Add webhook for x/.
+
 Publish
   Get atlas-pack Netlify deployment working
-  Revise oidoid.com and niedzielski.com/works websites. Add void too.
-  Finalize oidlib and sublimesolitaire / super patience names.
+  Revise oidoid.com and niedzielski.com/works websites. Align github.com/niedzielski and github.com/oidoid. Add void too.
+  Finalize oidlib / oidkit / odk and sublimesolitaire / super patience names.
   Create sublimesolitaire.com website.
+  Share with Deno requester, read.cv, FB, Twitter, niedzielski.com, oidoid.com.
   Add GitHub sponsorship.
   Add Patreon sponship.
   Add oidoid organization readme like https://github.com/hapsoc/.github.
@@ -60,6 +71,8 @@ linear-text
 
 Questions
   How can I make the oidlib + void more library-like? Combine into ODK / TMNT SDK?
+  How can I make publish.ts more declarative? I would go shell script but not sure how to increment SemVer gracefully.
+  Make oidoid an LLC?
 
 API Features
   Add Sprite grouping support and center sublime card layout. How should this work?
@@ -72,3 +85,10 @@ Backlog
   Apply shorthands like "string" to "str" universally.
   Explore esbuild for bundling.
   Review Deno std library for how it applies.
+  Add tags used to readme like #repos and #strings.
+  Add input profiler debug pane; FPS meter, avg, min, max, now.
+  Polish nttt.
+  Add goals. Review local notes for software as human as possible.
+    Make the SDK / platform as friendly and plain as possible.
+    Make website as friendly as possible.
+    Make the platform easy to iterate on.
