@@ -48,7 +48,7 @@
 	branch = main
 [submodule "sublimesolitaire.com"]
 	path = sublimesolitaire.com
-	url = ./sublimesolitaire.com
+	url = https://github.com/oidoid/sublimesolitaire.com
 	branch = main
 [submodule "void"]
 	path = void
