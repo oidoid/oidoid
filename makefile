@@ -16,7 +16,8 @@ repos := \
   lineartext.com \
   nature-elsewhere \
   natureelsewhere.com \
-  oidoid.com
+  oidoid.com \
+  sublimesolitaire.com
 
 dist_dir := dist
 dist_links := $(repos:%=$(dist_dir)/%/)
@@ -30,7 +31,8 @@ link_root_repos := \
   lineartext.com \
   mem \
   natureelsewhere.com \
-  oidoid.com
+  oidoid.com \
+  sublimesolitaire.com
 # Repos that link from repo/build.
 link_build_repos := linear-text
 # Repos that link from repo/dist.
