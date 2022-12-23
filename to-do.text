@@ -5,21 +5,19 @@ Clean
   Delete or archive encumber and old niedzielski and oidoid repos. This should be curated.
   Compare all the repos.
   Update all GitHub repo settings including profile settings (eg, github.com/organizations/oidoid/settings/profile).
-  Check all the licenses.
-  Replace throws with assert.
   Drop needless Uint usages.
   Align niedzielski/ parent repo.
   Prioritize repo to-dos and old project drafts. At least solitaire.text (and images), linear-text.text (and images), default.text, nature-elsewhere.text (and images) and each repo's to-do's.
   Clear Git stashes.
   Pull in any code worth saving from encumber, practice, and other repos.
+  Add publish script for sublimesolitaire.com. This is a messy manual process now.
 
 API improvements
-  Rework layers and bitmasks.
-  Clean up the shaders.
-  Refactor XY and Box as simplified classes. Look at old implementation. Re-review API.
-  For sprite target, send one XY (2 shorts) and width / height in multiples of tile dimension (1 unsigned byte each?) to GPU instead of two XYs (4 shorts).
-  Explore flipping target Box bounds instead of special bits in the shader.
   Refactor Num to at least delete Num and Unumber. Num should maybe be BigInt with util.
+  Rework layers and bitmasks.
+  Refactor XY and Box as simplified classes. Look at old implementation. Re-review API.
+  If Box was XY and WH instead of XY and XY, moving would only require one operation, sending WH to GPU is more efficient, and it's easier to reason about. It costs an extra type though or embedding width and height as props.
+  Explore flipping target Box bounds instead of special bits in the shader.
   Add config parser / factory that consumes JSON for XY, Box, Sprite, Component at least.
   Refactor Input, InputPoller, etc as classes. API should look something like `is('On'|'Off', ...buttons: 'PrimaryButton' | 'PrimaryMouse', 'Triggered'|'Active', ...types = 'Mouse' | 'Pen')`.
   Review old combo supported Input implementation + tests.
@@ -39,24 +37,21 @@ Nature Elsewhere
 
 sublime-solitaire
   Finish all the illustrations.
-  Add webhook for x/
   Fix issue on Joie's phone.
   Make win occur on final card building, not reset.
   Add dark mode support with palette swapping.
   Test context loss.
+  Share with Deno requester, read.cv, FB, Twitter, niedzielski.com, oidoid.com.
 
 oidoid
   Update all the submodule references.
   Add webhook for x/.
 
 Publish
-  Get atlas-pack Netlify deployment working
   Revise oidoid.com and niedzielski.com/works websites. Align github.com/niedzielski and github.com/oidoid. Add void too.
   Finalize oidlib / oidkit / odk naming.
-  Create sublimesolitaire.com website.
-  Share with Deno requester, read.cv, FB, Twitter, niedzielski.com, oidoid.com.
   Add GitHub sponsorship.
-  Add Patreon sponship.
+  Add Patreon sponsorship.
   Add oidoid organization readme like https://github.com/hapsoc/.github.
   Fix 01 Netlify deployment.
 
