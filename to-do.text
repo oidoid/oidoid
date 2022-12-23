@@ -17,6 +17,8 @@ API improvements
   Rework layers and bitmasks.
   Clean up the shaders.
   Refactor XY and Box as simplified classes. Look at old implementation. Re-review API.
+  For sprite target, send one XY (2 shorts) and width / height in multiples of tile dimension (1 unsigned byte each?) to GPU instead of two XYs (4 shorts).
+  Explore flipping target Box bounds instead of special bits in the shader.
   Refactor Num to at least delete Num and Unumber. Num should maybe be BigInt with util.
   Add config parser / factory that consumes JSON for XY, Box, Sprite, Component at least.
   Refactor Input, InputPoller, etc as classes. API should look something like `is('On'|'Off', ...buttons: 'PrimaryButton' | 'PrimaryMouse', 'Triggered'|'Active', ...types = 'Mouse' | 'Pen')`.
@@ -28,7 +30,6 @@ API improvements
   Num.ts needs I16.subClamp(), addClamp(), etc. These are in XY somehow but now lower.
   Document system update order for ECS. It's the order they're added.
   Add support for input order. I think this has to be update order but also have notion of handling.
-  Explore flipping target Box bounds instead of special bits in the shader.
 
 Nature Elsewhere
   Fix license.text
@@ -51,7 +52,7 @@ oidoid
 Publish
   Get atlas-pack Netlify deployment working
   Revise oidoid.com and niedzielski.com/works websites. Align github.com/niedzielski and github.com/oidoid. Add void too.
-  Finalize oidlib / oidkit / odk and sublimesolitaire / super patience names.
+  Finalize oidlib / oidkit / odk naming.
   Create sublimesolitaire.com website.
   Share with Deno requester, read.cv, FB, Twitter, niedzielski.com, oidoid.com.
   Add GitHub sponsorship.
@@ -92,3 +93,5 @@ Backlog
     Make the SDK / platform as friendly and plain as possible.
     Make website as friendly as possible.
     Make the platform easy to iterate on.
+  Get a better domain for mem font.
+

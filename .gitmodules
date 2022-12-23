@@ -18,10 +18,6 @@
 	path = mem
 	url = https://github.com/oidoid/mem.git
 	branch = main
-[submodule "void"]
-	path = void
-	url = ./void
-	branch = main
 [submodule "nature-elsewhere"]
 	path = nature-elsewhere
 	url = https://github.com/oidoid/nature-elsewhere.git
@@ -49,4 +45,12 @@
 [submodule "sublime-solitaire"]
 	path = sublime-solitaire
 	url = https://github.com/oidoid/sublime-solitaire.git
+	branch = main
+[submodule "sublimesolitaire.com"]
+	path = sublimesolitaire.com
+	url = ./sublimesolitaire.com
+	branch = main
+[submodule "void"]
+	path = void
+	url = https://github.com/oidoid/void.git
 	branch = main
