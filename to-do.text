@@ -13,14 +13,12 @@ Clean
   Add publish script for sublimesolitaire.com. This is a messy manual process now.
 
 API improvements
+  Refactor Input, InputPoller, etc as classes. API should look something like `is('On'|'Off', ...buttons: 'PrimaryButton' | 'PrimaryMouse', 'Triggered'|'Active', ...types = 'Mouse' | 'Pen')`.
+  Review old combo supported Input implementation + tests.
   Refactor Num to at least delete Num and Unumber. Num should maybe be BigInt with util.
   Rework layers and bitmasks.
   Refactor XY and Box as simplified classes. Look at old implementation. Re-review API.
   If Box was XY and WH instead of XY and XY, moving would only require one operation, sending WH to GPU is more efficient, and it's easier to reason about. It costs an extra type though or embedding width and height as props.
-  Explore flipping target Box bounds instead of special bits in the shader.
-  Add config parser / factory that consumes JSON for XY, Box, Sprite, Component at least.
-  Refactor Input, InputPoller, etc as classes. API should look something like `is('On'|'Off', ...buttons: 'PrimaryButton' | 'PrimaryMouse', 'Triggered'|'Active', ...types = 'Mouse' | 'Pen')`.
-  Review old combo supported Input implementation + tests.
   Sprite should wrap all the APIs of its constituent pieces like `isIntersecting(XY|Box|Sprite)` and `cel()` (get cel for rendering).
   Make the ECS API a class. This should be something like new, add, query, update.
   Review ECS.get(). This has a lot of typing but is only used internally.
