@@ -1,7 +1,27 @@
-Clean
-  Resolve all uncommited changes. The monorepo needs to be totally unambiguous.
+In-progress
   Finish reviewing old NE TypeScript branch and delete folder.
+  Review NE Rust implementations and be done with it!
+  Resolve all uncommited changes. The monorepo needs to be totally unambiguous.
+  Finish all the sublime illustrations.
+  Finalize oidlib / oidkit / odk naming.
+
+Next
   Review NE devlog and delete folder and commit that.
+  Commit per-project to-dos. Start yanking some of the more important ones out from drafts.
+  Refactor Num to at least delete Num and Unumber. Num should maybe be BigInt with util.
+  Num.ts needs I16.subClamp(), addClamp(), etc. These are in XY somehow but now lower.
+  Rework layers and bitmasks.
+  Refactor XY and Box as simplified classes. Look at old implementation. Re-review API.
+  If Box was XY and WH instead of XY and XY, moving would only require one operation, sending WH to GPU is more efficient, and it's easier to reason about. It costs an extra type though or embedding width and height as props.
+  Sprite should wrap all the APIs of its constituent pieces like `isIntersecting(XY|Box|Sprite)` and `cel()` (get cel for rendering).
+  Make the ECS API a class. This should be something like new, add, query, update.
+  Review ECS.get(). This has a lot of typing but is only used internally.
+  shish-ke-bab case files + updated readme. Maybe use mmv https://github.com/itchyny/mmv/releases.
+  Iterate void with single-screen games.
+  Start Linear Text.
+
+Clean
+  Don't bother passing globals like window and document? Otherwise, update input to take window and navigator. Favor globalThis.
   Delete or archive encumber and old niedzielski and oidoid repos. This should be curated.
   Compare all the repos.
   Update all GitHub repo settings including profile settings (eg, github.com/organizations/oidoid/settings/profile).
@@ -13,19 +33,10 @@ Clean
   Add publish script for sublimesolitaire.com. This is a messy manual process now.
 
 API improvements
-  Refactor Input, InputPoller, etc as classes. API should look something like `is('On'|'Off', ...buttons: 'PrimaryButton' | 'PrimaryMouse', 'Triggered'|'Active', ...types = 'Mouse' | 'Pen')`.
-  Review old combo supported Input implementation + tests.
-  Refactor Num to at least delete Num and Unumber. Num should maybe be BigInt with util.
-  Rework layers and bitmasks.
-  Refactor XY and Box as simplified classes. Look at old implementation. Re-review API.
-  If Box was XY and WH instead of XY and XY, moving would only require one operation, sending WH to GPU is more efficient, and it's easier to reason about. It costs an extra type though or embedding width and height as props.
-  Sprite should wrap all the APIs of its constituent pieces like `isIntersecting(XY|Box|Sprite)` and `cel()` (get cel for rendering).
-  Make the ECS API a class. This should be something like new, add, query, update.
-  Review ECS.get(). This has a lot of typing but is only used internally.
   Can I get rid of second template param to SublimeUpdate?
-  Num.ts needs I16.subClamp(), addClamp(), etc. These are in XY somehow but now lower.
   Document system update order for ECS. It's the order they're added.
-  Add support for input order. I think this has to be update order but also have notion of handling.
+  Add support for input order to ECS. I think this has to be update order but also have notion of handling.
+  Convert ECS to class.
 
 Nature Elsewhere
   Fix license.text
@@ -34,12 +45,12 @@ Nature Elsewhere
   Revert to TypeScript branch but don't attempt to integrate with Deno monorepoid.
 
 sublime-solitaire
-  Finish all the illustrations.
-  Fix issue on Joie's phone.
+  Rework CardSystem. What a monster.
+  Re-explore stacking cards horizontally.
   Make win occur on final card building, not reset.
   Add dark mode support with palette swapping.
   Test context loss.
-  Share with Deno requester, read.cv, FB, Twitter, niedzielski.com, oidoid.com.
+  Share with Deno requester, read.cv, subreply.com, FB, Twitter, niedzielski.com, oidoid.com.
 
 oidoid
   Update all the submodule references.
@@ -47,7 +58,6 @@ oidoid
 
 Publish
   Revise oidoid.com and niedzielski.com/works websites. Align github.com/niedzielski and github.com/oidoid. Add void too.
-  Finalize oidlib / oidkit / odk naming.
   Add GitHub sponsorship.
   Add Patreon sponsorship.
   Add oidoid organization readme like https://github.com/hapsoc/.github.
@@ -69,11 +79,12 @@ Questions
   Make oidoid an LLC?
 
 API Features
-  Add Sprite grouping support and center sublime card layout. How should this work?
+  Add Sprite grouping support. How should this work?
   Add UI components like buttons and forms.
   Test text rendering.
 
 Backlog
+  Fix tap-to-click trackpad rapid tap issue. Maybe just test the mouse API for the hell of it.
   Explore using `git -C` instead of sub-makes.
   Replace enum patterns with Set?
   Apply shorthands like "string" to "str" universally.
