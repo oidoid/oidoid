@@ -1,19 +1,22 @@
+Now!
+  Commit per-project to-dos. Start yanking some of the more important ones out from drafts.
+
 In-progress
   Finish reviewing old NE TypeScript branch and delete folder.
   Review NE Rust implementations and be done with it!
   Resolve all uncommited changes. The monorepo needs to be totally unambiguous.
+  Review NE devlog and delete folder and commit that.
   Finish all the sublime illustrations.
   Finalize oidlib / oidkit / odk naming.
+  Rename to super patience?
 
 Next
-  Review NE devlog and delete folder and commit that.
-  Commit per-project to-dos. Start yanking some of the more important ones out from drafts.
   Refactor Num to at least delete Num and Unumber. Num should maybe be BigInt with util.
   Num.ts needs I16.subClamp(), addClamp(), etc. These are in XY somehow but now lower.
-  Rework layers and bitmasks.
   Refactor XY and Box as simplified classes. Look at old implementation. Re-review API.
   If Box was XY and WH instead of XY and XY, moving would only require one operation, sending WH to GPU is more efficient, and it's easier to reason about. It costs an extra type though or embedding width and height as props.
   Sprite should wrap all the APIs of its constituent pieces like `isIntersecting(XY|Box|Sprite)` and `cel()` (get cel for rendering).
+  Rework layers and bitmasks.
   Make the ECS API a class. This should be something like new, add, query, update.
   Review ECS.get(). This has a lot of typing but is only used internally.
   shish-ke-bab case files + updated readme. Maybe use mmv https://github.com/itchyny/mmv/releases.
