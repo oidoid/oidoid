@@ -7,7 +7,7 @@
     "nttt",
     "oidlib",
     "solitaire",
-    "sublime-solitaire",
+    "super-patience",
     "void"
   ],
   "deno.lint": true,

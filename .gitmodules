@@ -42,13 +42,13 @@
 	path = solitaire
 	url = https://github.com/oidoid/solitaire.git
 	branch = main
-[submodule "sublime-solitaire"]
-	path = sublime-solitaire
-	url = https://github.com/oidoid/sublime-solitaire.git
+[submodule "super-patience"]
+	path = super-patience
+	url = https://github.com/oidoid/super-patience.git
 	branch = main
-[submodule "sublimesolitaire.com"]
-	path = sublimesolitaire.com
-	url = https://github.com/oidoid/sublimesolitaire.com
+[submodule "superpatience.com"]
+	path = superpatience.com
+	url = https://github.com/oidoid/superpatience.com.git
 	branch = main
 [submodule "void"]
 	path = void

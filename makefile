@@ -7,7 +7,7 @@ make_repos := \
   nttt \
   oidlib \
   solitaire \
-	sublime-solitaire \
+	super-patience \
   void
 repos := \
   $(make_repos) \
@@ -17,7 +17,7 @@ repos := \
   nature-elsewhere \
   natureelsewhere.com \
   oidoid.com \
-  sublimesolitaire.com
+  superpatience.com
 
 dist_dir := dist
 dist_links := $(repos:%=$(dist_dir)/%/)
@@ -32,7 +32,7 @@ link_root_repos := \
   mem \
   natureelsewhere.com \
   oidoid.com \
-  sublimesolitaire.com
+  superpatience.com
 # Repos that link from repo/build.
 link_build_repos := linear-text
 # Repos that link from repo/dist.
@@ -72,7 +72,7 @@ endef
 $(foreach repo,$(watch_bundle_repos),$(eval $(call watch_template,$(repo),watch\:bundle)))
 $(eval $(call watch_template,atlas-pack,watch\:build watch\:bundle))
 $(eval $(call watch_template,mem,watch\:build))
-$(eval $(call watch_template,sublime-solitaire,watch\:build watch\:bundle))
+$(eval $(call watch_template,super-patience,watch\:build watch\:bundle))
 
 .PHONY: test
 test: test\:format test\:lint build test\:unit
