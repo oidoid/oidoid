@@ -7,6 +7,6 @@
     "@/solitaire": "./solitaire/mod.ts",
     "@/super-patience": "./super-patience/mod.ts",
     "@/void": "./void/mod.ts",
-    "std/": "https://deno.land/std@0.159.0/"
+    "std/": "https://deno.land/std@0.171.0/"
   }
 }
