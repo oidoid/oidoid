@@ -38,6 +38,10 @@
 	path = oidoid.com
 	url = https://github.com/oidoid/oidoid.com.git
 	branch = main
+[submodule "protos/green-field"]
+	path = protos/green-field
+	url = https://github.com/oidoid/green-field.git
+	branch = main
 [submodule "solitaire"]
 	path = solitaire
 	url = https://github.com/oidoid/solitaire.git

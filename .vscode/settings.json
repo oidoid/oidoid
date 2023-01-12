@@ -8,6 +8,7 @@
     "oidlib",
     "solitaire",
     "super-patience",
+    "protos",
     "void"
   ],
   "deno.lint": true,

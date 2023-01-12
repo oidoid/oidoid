@@ -6,6 +6,7 @@ make_repos := \
 	mem \
   nttt \
   oidlib \
+  protos/green-field \
   solitaire \
 	super-patience \
   void
@@ -35,8 +36,10 @@ link_root_repos := \
   superpatience.com
 # Repos that link from repo/build.
 link_build_repos := linear-text
+# Repos that link from protos/repo/dist.
+link_proto_dist_repos := $(wildcard protos/*)
 # Repos that link from repo/dist.
-link_dist_repos := $(filter-out $(link_root_repos) $(link_build_repos),$(repos))
+link_dist_repos := $(filter-out $(link_root_repos) $(link_build_repos) $(link_proto_dist_repos),$(repos))
 
 # Repos that only use watch:bundle for watch.
 watch_bundle_repos := \
@@ -73,6 +76,7 @@ $(foreach repo,$(watch_bundle_repos),$(eval $(call watch_template,$(repo),watch\
 $(eval $(call watch_template,atlas-pack,watch\:build watch\:bundle))
 $(eval $(call watch_template,mem,watch\:build))
 $(eval $(call watch_template,super-patience,watch\:build watch\:bundle))
+$(eval $(call watch_template,protos/green-field,watch\:build watch\:bundle))
 
 .PHONY: test
 test: test\:format test\:lint build test\:unit
@@ -97,11 +101,19 @@ $$(patsubst %,$$(dist_dir)/%/,$(1)): | $$(dist_dir)/
   $$(ln) --symbolic '../$$(@:$$(dist_dir)/%=%)$(2)' '$$(@:%/=%)'
 endef
 
+# $1 repos
+# $2 src dir
+define ln_proto_template =
+$$(patsubst %,$$(dist_dir)/%/,$(1)): | $$(dist_dir)/ $$(dist_dir)/protos/
+  $$(ln) --symbolic '../../$$(@:$$(dist_dir)/%=%)$(2)' '$$(@:%/=%)'
+endef
+
 $(eval $(call ln_template,$(link_root_repos),))
 $(eval $(call ln_template,$(link_build_repos),build))
+$(eval $(call ln_proto_template,$(link_proto_dist_repos),dist))
 $(eval $(call ln_template,$(link_dist_repos),dist))
 
-$(dist_dir)/:; $(mkdir) '$@'
+$(dist_dir)/ $(dist_dir)/protos/:; $(mkdir) '$@'
 
 .PHONY: clean
 clean:

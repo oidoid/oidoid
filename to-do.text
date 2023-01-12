@@ -18,7 +18,6 @@ Next
   Rework layers and bitmasks.
   Make the ECS API a class. This should be something like new, add, query, update.
   Review ECS.get(). This has a lot of typing but is only used internally.
-  shish-ke-bab case files + updated readme. Maybe use mmv https://github.com/itchyny/mmv/releases.
   Iterate void with single-screen games.
   Start Linear Text.
 
