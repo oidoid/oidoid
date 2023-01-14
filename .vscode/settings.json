@@ -3,12 +3,12 @@
   // [repos]
   "deno.enablePaths": [
     "atlas-pack",
+    "demos",
     "mem",
     "nttt",
     "oidlib",
     "solitaire",
     "super-patience",
-    "protos",
     "void"
   ],
   "deno.lint": true,

@@ -1,7 +1,7 @@
 {
   "imports": {
     "@/atlas-pack": "./atlas-pack/mod.ts",
-    "@/green-field": "./protos/green-field/mod.ts",
+    "@/green-field": "./demos/green-field/mod.ts",
     "@/mem": "./mem/mod.ts",
     "@/nttt": "./nttt/mod.ts",
     "@/oidlib": "./oidlib/mod.ts",
