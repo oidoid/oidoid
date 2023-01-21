@@ -1,20 +1,19 @@
 Now!
   Commit per-project to-dos. Start yanking some of the more important ones out from drafts.
+  Finalize oidlib / oidkit / odk naming.
+  Review NE Rust implementations and be done with it!
 
 In-progress
-  Review NE Rust implementations and be done with it!
   Resolve all uncommited changes. The monorepo needs to be totally unambiguous.
   Review NE devlog and delete folder and commit that.
-  Finalize oidlib / oidkit / odk naming.
 
 Next
+  Level config can get smaller with xy and box config changes
   Prioritize repo to-dos and old project drafts. At least solitaire.text (and images), linear-text.text (and images), default.text, nature-elsewhere.text (and images) and each repo's to-do's.
-  Refactor Num to at least delete Num and Unumber. Num should maybe be BigInt with util. Current floating point trick seems legit but is rough past 31 bits. The old code used to store floating points for some ents but truncated getter values which was really useful for slow LERPs and other subpixel operations.
-  Num.ts needs I16.subClamp(), addClamp(), etc. These are in XY somehow but now lower.
   Refactor XY and Box as simplified classes. Look at old implementation. Re-review API. vec2/ivec2/fvec2/bigintvec.
   If Box was XY and WH instead of XY and XY, moving would only require one operation, sending WH to GPU is more efficient, and it's easier to reason about. It costs an extra type though or embedding width and height as props.
   Sprite should wrap all the APIs of its constituent pieces like `isIntersecting(XY|Box|Sprite)` and `cel()` (get cel for rendering).
-  Rework layers and bitmasks.
+  Rework layers and bitmasks at the num level. Explore mul / div by 2 ** power for shifting and masking the lower 31/32 bits.
   Make the ECS API a class. This should be something like new, add, query, update.
   Review ECS.get(). This has a lot of typing but is only used internally.
   Iterate void with single-screen games.
