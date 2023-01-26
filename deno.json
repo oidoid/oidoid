@@ -13,7 +13,7 @@
     "files": {
       "exclude": ["dist", "mem/dist", "linear-text", "nature-elsewhere"]
     },
-    "options": { "singleQuote": true }
+    "options": { "semiColons": false, "singleQuote": true }
   },
   "importMap": "mods.json",
   "lint": {

@@ -1,91 +1,34 @@
 Now!
+  Review NE devlog and delete folder and commit that.
   Commit per-project to-dos. Start yanking some of the more important ones out from drafts.
-  Finalize oidlib / oidkit / odk naming.
+    Prioritize repo to-dos and old project drafts. At least solitaire.text (and images), linear-text.text (and images), default.text, nature-elsewhere.text (and images) and each repo's to-do's.
+    Add goals. Review local notes for software as human as possible.
+      Make the SDK / platform as friendly and plain as possible.
+      Make website as friendly as possible.
+      Make the platform easy to iterate on.
   Review NE Rust implementations and be done with it!
 
-In-progress
-  Resolve all uncommited changes. The monorepo needs to be totally unambiguous.
-  Review NE devlog and delete folder and commit that.
-
-Next
-  Level config can get smaller with xy and box config changes
-  Prioritize repo to-dos and old project drafts. At least solitaire.text (and images), linear-text.text (and images), default.text, nature-elsewhere.text (and images) and each repo's to-do's.
-  Refactor XY and Box as simplified classes. Look at old implementation. Re-review API. vec2/ivec2/fvec2/bigintvec.
-  If Box was XY and WH instead of XY and XY, moving would only require one operation, sending WH to GPU is more efficient, and it's easier to reason about. It costs an extra type though or embedding width and height as props.
-  Sprite should wrap all the APIs of its constituent pieces like `isIntersecting(XY|Box|Sprite)` and `cel()` (get cel for rendering).
-  Rework layers and bitmasks at the num level. Explore mul / div by 2 ** power for shifting and masking the lower 31/32 bits.
-  Make the ECS API a class. This should be something like new, add, query, update.
-  Review ECS.get(). This has a lot of typing but is only used internally.
-  Iterate void with single-screen games.
-  Start Linear Text.
-
-Clean
-  Don't bother passing globals like window and document? Otherwise, update input to take window and navigator. Favor globalThis.
-  Delete or archive encumber and old niedzielski and oidoid repos. This should be curated.
-  Compare all the repos.
-  Update all GitHub repo settings including profile settings (eg, github.com/organizations/oidoid/settings/profile).
-  Drop needless Uint usages.
-  Align niedzielski/ parent repo.
-  Clear Git stashes.
-  Pull in any code worth saving from encumber, practice, and other repos.
-  Add publish script for superpatience.com. This is a messy manual process now.
-  Would be nice to harden what a "Config" is in the codebase compared to other models. Is it just initialization data or is it mutable lifetime state?
-
-API improvements
-  Can I get rid of second template param to SPUpdate?
-  Document system update order for ECS. It's the order they're added.
-  Add support for input order to ECS. I think this has to be update order but also have notion of handling.
-  Convert ECS to class.
-  LevelParser should accept raw x, y, w, and h properties instead of requiring xy and wh.
-
-Nature Elsewhere
-  Fix license.text
-  AGPL-3.0-only AND no CC-BY-SA-4.0
-  Review Rust branch.
-  Revert to TypeScript branch but don't attempt to integrate with Deno monorepoid.
-
-oidoid
-  Add webhook for x/.
-
 Publish
-  Revise oidoid.com and niedzielski.com/works websites. Align github.com/niedzielski and github.com/oidoid. Add void too.
+  Align niedzielski/ parent repo.
+  Revise niedzielski.com/works websites. Align github.com/niedzielski and github.com/oidoid.
   Add GitHub sponsorship.
   Add Patreon sponsorship.
   Add KoFi sponsorship.
   Add oidoid organization readme like https://github.com/hapsoc/.github.
+  Make oidoid an LLC?
+  Delete or archive encumber and old niedzielski and oidoid repos. This should be curated.
+    Archive nttt. How can I freeze this well in the submodule system?
+  Update all GitHub repo settings including profile settings (eg, github.com/organizations/oidoid/settings/profile).
+  Compare all the repos.
   Fix 01 Netlify deployment.
 
-Next
-  Tiny Asteroid-like sprite game to exercise void. Can I build it in a day? If not, what changes do I need to make?
-  Sketch out new Linear Text plan.
-
-linear-text
-  Check linear-text can build ok still.
-  Transfer package.json keywords.
-  Move to-do markdown to text.
-  Check license.text.
-
-Questions
-  How can I make the oidlib + void more library-like? Combine into ODK / TMNT SDK?
-  How can I make publish.ts more declarative? I would go shell script but not sure how to increment SemVer gracefully.
-  Make oidoid an LLC?
-
-API Features
-  Add Sprite grouping support. How should this work?
-  Add UI components like buttons and forms.
-  Test text rendering.
-
 Backlog
-  Explore using `git -C` instead of sub-makes.
+  Move common makefile rules to oidlib/rules.make and void/rules.make.
+  Favor I16s for coordinates across the repos; don't over-type.
+  Don't bother passing globals like window and document? Otherwise, update input to take window and navigator. Favor globalThis.
+  Clear Git stashes.
+  Pull in any code worth saving from encumber, practice, and other repos.
+  Would be nice to harden what a "Config" is in the codebase compared to other models. Is it just initialization data or is it mutable lifetime state?
   Replace enum patterns with Set?
-  Apply shorthands like "string" to "str" universally.
-  Explore esbuild for bundling.
   Review Deno std library for how it applies.
   Add tags used to readme like #repos and #strings.
-  Add input profiler debug pane; FPS meter, avg, min, max, now.
-  Archive nttt. How can I freeze this well in the submodule system?
-  Add goals. Review local notes for software as human as possible.
-    Make the SDK / platform as friendly and plain as possible.
-    Make website as friendly as possible.
-    Make the platform easy to iterate on.
-  Get a better domain for mem font.
