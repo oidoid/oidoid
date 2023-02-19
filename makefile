@@ -124,3 +124,13 @@ $(dist_dir)/ $(dist_dir)/demos/:; $(mkdir) '$@'
 clean:
   for repo in $(make_repos); do $(make) --directory="$$repo" clean; done
   $(rm) '$(dist_dir)/'
+
+.PHONY: rebuild
+rebuild:
+  $(make) clean
+  $(make) build
+
+.PHONY: retest
+retest:
+  $(make) clean
+  $(make) test
