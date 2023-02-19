@@ -1,4 +1,4 @@
-include oidlib/config.make
+include ooz/config.make
 
 # [repos] that use make and all repos.
 make_repos := \
@@ -6,7 +6,7 @@ make_repos := \
   demos/green-field \
 	mem \
   nttt \
-  oidlib \
+  ooz \
   solitaire \
 	super-patience \
   void
@@ -43,8 +43,8 @@ link_dist_repos := $(filter-out $(link_root_repos) $(link_build_repos) $(link_de
 
 # Repos that only use watch:bundle for watch.
 watch_bundle_repos := \
-  oidlib \
   nttt \
+  ooz \
   solitaire \
   void
 

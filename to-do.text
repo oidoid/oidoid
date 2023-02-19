@@ -23,7 +23,7 @@ Publish
   Fix 01 Netlify deployment.
 
 Backlog
-  Move common makefile rules to oidlib/rules.make and void/rules.make.
+  Move common makefile rules to ooz/rules.make and void/rules.make.
   Favor I16s for coordinates across the repos; don't over-type.
   Don't bother passing globals like window and document? Otherwise, update input to take window and navigator. Favor globalThis.
   Clear Git stashes.

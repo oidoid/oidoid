@@ -6,6 +6,10 @@
 	path = atlas-pack
 	url = https://github.com/oidoid/atlas-pack.git
 	branch = main
+[submodule "demos/green-field"]
+	path = demos/green-field
+	url = https://github.com/oidoid/green-field.git
+	branch = main
 [submodule "linear-text"]
 	path = linear-text
 	url = https://github.com/oidoid/linear-text.git
@@ -30,17 +34,13 @@
 	path = nttt
 	url = https://github.com/oidoid/nttt.git
 	branch = main
-[submodule "oidlib"]
-	path = oidlib
-	url = https://github.com/oidoid/oidlib.git
-	branch = main
 [submodule "oidoid.com"]
 	path = oidoid.com
 	url = https://github.com/oidoid/oidoid.com.git
 	branch = main
-[submodule "demos/green-field"]
-	path = demos/green-field
-	url = https://github.com/oidoid/green-field.git
+[submodule "ooz"]
+	path = ooz
+	url = https://github.com/oidoid/ooz.git
 	branch = main
 [submodule "solitaire"]
 	path = solitaire
