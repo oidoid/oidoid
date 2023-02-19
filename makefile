@@ -51,18 +51,18 @@ watch_bundle_repos := \
 format_args ?=
 
 .PHONY: build
-build: $(make_repos:%=build\:%) | $(dist_links)
+build: $(make_repos:%=build-%) | $(dist_links)
 
 # $1 repo
 define build_template =
-.PHONY: build\:$(1)
-build\:$(1):; $$(make) --directory='$(1)' build
+.PHONY: build-$(1)
+build-$(1):; $$(make) --directory='$(1)' build
 endef
 
 $(foreach repo,$(make_repos),$(eval $(call build_template,$(repo))))
 
 .PHONY: watch
-watch: serve $(make_repos:%=watch\:%)
+watch: serve $(make_repos:%=watch-%)
 
 .PHONY: serve
 serve: | $(dist_links); $(live-server) '$(dist_dir)'
@@ -70,34 +70,34 @@ serve: | $(dist_links); $(live-server) '$(dist_dir)'
 # $1 repo
 # $2 targets
 define watch_template =
-.PHONY: watch\:$(1)
-watch\:$(1):; $$(make) --directory='$(1)' $(2)
+.PHONY: watch-$(1)
+watch-$(1):; $$(make) --directory='$(1)' $(2)
 endef
 
-$(foreach repo,$(watch_bundle_repos),$(eval $(call watch_template,$(repo),watch\:bundle)))
-$(eval $(call watch_template,atlas-pack,watch\:build watch\:bundle))
-$(eval $(call watch_template,mem,watch\:build))
-$(eval $(call watch_template,super-patience,watch\:build watch\:bundle))
-$(eval $(call watch_template,demos/green-field,watch\:build watch\:bundle))
+$(foreach repo,$(watch_bundle_repos),$(eval $(call watch_template,$(repo),watch-bundle)))
+$(eval $(call watch_template,atlas-pack,watch-build watch-bundle))
+$(eval $(call watch_template,mem,watch-build))
+$(eval $(call watch_template,super-patience,watch-build watch-bundle))
+$(eval $(call watch_template,demos/green-field,watch-build watch-bundle))
 
 .PHONY: test
-test: test\:format test\:lint build test\:unit
+test: test-format test-lint build test-unit
 
-.PHONY: test\:format
-test\:format: format_args += --check
+.PHONY: test-format
+test-format: format_args += --check
 
 .PHONY: format
 format:; $(deno) fmt --config='$(deno_config)' $(format_args)
 
-.PHONY: test\:lint
-test\:lint:; $(deno) lint --config='$(deno_config)' $(if $(value v),,--quiet)
+.PHONY: test-lint
+test-lint:; $(deno) lint --config='$(deno_config)' $(if $(value v),,--quiet)
 
-.PHONY: test\:unit
-test\:unit: build; $(deno) test --allow-read=. --config='$(deno_config)' $(test_unit_args)
+.PHONY: test-unit
+test-unit: build; $(deno) test --allow-read=. --config='$(deno_config)' $(test_unit_args)
 
-.PHONY: test\:unit\:update
-test\:unit\:update: test_unit_args += --allow-write=. -- --update
-test\:unit\:update: test\:unit
+.PHONY: test-unit-update
+test-unit-update: test_unit_args += --allow-write=. -- --update
+test-unit-update: test-unit
 
 # $1 repos
 # $2 src dir
