@@ -1,4 +1,8 @@
 Now!
+  replace deno pack with esbuild + typechecking
+    https://esbuild.github.io/api/#tsconfig
+    https://deno.land/x/esbuild@v0.17.10
+    https://github.com/denoland/deno/issues/14858
   Review NE devlog and delete folder and commit that.
   Commit per-project to-dos. Start yanking some of the more important ones out from drafts.
     Prioritize repo to-dos and old project drafts. At least solitaire.text (and images), linear-text.text (and images), default.text, nature-elsewhere.text (and images) and each repo's to-do's.
@@ -29,6 +33,6 @@ Backlog
   Clear Git stashes.
   Pull in any code worth saving from encumber, practice, and other repos.
   Would be nice to harden what a "Config" is in the codebase compared to other models. Is it just initialization data or is it mutable lifetime state?
-  Replace enum patterns with Set?
+  Replace enum patterns with Set or revert?
   Review Deno std library for how it applies.
   Add tags used to readme like #repos and #strings.
