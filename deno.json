@@ -1,5 +1,4 @@
 {
-  // https://deno.land/manual@main/typescript/configuration
   "compilerOptions": {
     "exactOptionalPropertyTypes": true,
     "noImplicitOverride": true,
@@ -15,7 +14,17 @@
     },
     "options": { "semiColons": false, "singleQuote": true }
   },
-  "importMap": "mods.json",
+  "imports": {
+    "@/atlas-pack": "./atlas-pack/mod.ts",
+    "@/green-field": "./demos/green-field/mod.ts",
+    "@/mem": "./mem/mod.ts",
+    "@/nttt": "./nttt/mod.ts",
+    "@/ooz": "./ooz/mod.ts",
+    "@/solitaire": "./solitaire/mod.ts",
+    "@/super-patience": "./super-patience/mod.ts",
+    "@/void": "./void/mod.ts",
+    "std/": "https://deno.land/std@0.179.0/"
+  },
   "lint": {
     "files": {
       "exclude": ["dist", "mem/dist", "linear-text", "nature-elsewhere"]
