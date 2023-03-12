@@ -1,8 +1,4 @@
 Now!
-  replace deno pack with esbuild + typechecking
-    https://esbuild.github.io/api/#tsconfig
-    https://deno.land/x/esbuild@v0.17.10
-    https://github.com/denoland/deno/issues/14858
   Review NE devlog and delete folder and commit that.
   Commit per-project to-dos. Start yanking some of the more important ones out from drafts.
     Prioritize repo to-dos and old project drafts. At least solitaire.text (and images), linear-text.text (and images), default.text, nature-elsewhere.text (and images) and each repo's to-do's.
@@ -11,6 +7,8 @@ Now!
       Make website as friendly as possible.
       Make the platform easy to iterate on.
   Review NE Rust implementations and be done with it!
+  Review draft notes in solitaire.text, NE, Linear, default.text, and elsewhere.
+
 
 Publish
   Align niedzielski/ parent repo.
@@ -24,7 +22,6 @@ Publish
     Archive nttt. How can I freeze this well in the submodule system?
   Update all GitHub repo settings including profile settings (eg, github.com/organizations/oidoid/settings/profile).
   Compare all the repos.
-  Fix 01 Netlify deployment.
 
 Backlog
   Move common makefile rules to ooz/rules.make and void/rules.make.

@@ -30,7 +30,12 @@
       "exclude": ["dist", "mem/dist", "linear-text", "nature-elsewhere"]
     },
     "rules": {
-      "exclude": ["no-empty-interface", "no-inferrable-types", "no-namespace"]
+      "exclude": [
+        "no-empty-interface",
+        "no-inferrable-types",
+        "no-misused-new",
+        "no-namespace"
+      ]
     }
   },
   "lock": false,
