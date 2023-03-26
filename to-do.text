@@ -1,4 +1,7 @@
 Now!
+  change typeof blahs to enums
+  drop all namespaces
+  rename AtlasMeta to Atlas? and then the image is an AtlasImage--it's just that i almost never work with AtlasImage
   Review NE devlog and delete folder and commit that.
   Commit per-project to-dos. Start yanking some of the more important ones out from drafts.
     Prioritize repo to-dos and old project drafts. At least solitaire.text (and images), linear-text.text (and images), default.text, nature-elsewhere.text (and images) and each repo's to-do's.
