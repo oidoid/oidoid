@@ -48,7 +48,7 @@ watch_bundle_repos := \
   solitaire \
   void
 
-format_args ?=
+fmt_args ?=
 
 .PHONY: build
 build: $(make_repos:%=build-%) | $(dist_links)
@@ -81,13 +81,13 @@ $(eval $(call watch_template,super-patience,watch-build watch-bundle))
 $(eval $(call watch_template,demos/green-field,watch-build watch-bundle))
 
 .PHONY: test
-test: test-format test-lint build test-unit
+test: test-fmt test-lint build test-unit
 
-.PHONY: test-format
-test-format: format_args += --check
+.PHONY: test-fmt
+test-fmt: fmt_args += --check
 
-.PHONY: format
-format:; $(deno) fmt --config='$(deno_config)' $(format_args)
+.PHONY: fmt
+fmt:; $(deno) fmt --config='$(deno_config)' $(fmt_args)
 
 .PHONY: test-lint
 test-lint:; $(deno) lint --config='$(deno_config)' $(if $(value v),,--quiet)
