@@ -1,22 +1,11 @@
-Archive nttt. How can I freeze this well in the submodule system?
+Pull in any code worth saving from practice.
+Prioritize repo to-dos and old project drafts. At least solitaire.text (and images), linear-text.text (and images), default.text, nature-elsewhere.text (and images), default.text, elsewhere, and each repo's to-do's.
+Add goals. Review local notes for software as human as possible.
+  Make the SDK / platform as friendly and plain as possible.
+  Make website as friendly as possible.
+  Make the platform easy to iterate on.
 
-Portfolio vs tiny code
-git subs
-
-
-Review NE devlog and delete folder and commit that.
-Commit per-project to-dos. Start yanking some of the more important ones out from drafts.
-  Prioritize repo to-dos and old project drafts. At least solitaire.text (and images), linear-text.text (and images), default.text, nature-elsewhere.text (and images) and each repo's to-do's.
-  Add goals. Review local notes for software as human as possible.
-    Make the SDK / platform as friendly and plain as possible.
-    Make website as friendly as possible.
-    Make the platform easy to iterate on.
-Review NE Rust implementations and be done with it!
-Review draft notes in solitaire.text, NE, Linear, default.text, and elsewhere.
-
-Delete or archive encumber and old niedzielski and oidoid repos. This should be curated.
-Pull in any code worth saving from encumber, practice, and other repos.
-
+Make Linear part of the polyrepo.
 Update all GitHub repo settings including profile settings (eg, github.com/organizations/oidoid/settings/profile).
 Compare all the repos.
 Align niedzielski/ parent repo.

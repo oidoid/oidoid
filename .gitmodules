@@ -22,14 +22,6 @@
 	path = mem
 	url = https://github.com/oidoid/mem.git
 	branch = main
-[submodule "nature-elsewhere"]
-	path = nature-elsewhere
-	url = https://github.com/oidoid/nature-elsewhere.git
-	branch = main
-[submodule "natureelsewhere.com"]
-	path = natureelsewhere.com
-	url = https://github.com/oidoid/natureelsewhere.com.git
-	branch = main
 [submodule "nttt"]
 	path = nttt
 	url = https://github.com/oidoid/nttt.git

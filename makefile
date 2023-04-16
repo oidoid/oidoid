@@ -15,8 +15,6 @@ repos := \
   01 \
   linear-text \
   lineartext.com \
-  nature-elsewhere \
-  natureelsewhere.com \
   oidoid.com \
   superpatience.com
 
@@ -31,7 +29,6 @@ link_root_repos := \
   01 \
   lineartext.com \
   mem \
-  natureelsewhere.com \
   oidoid.com \
   superpatience.com
 # Repos that link from repo/build.
