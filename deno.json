@@ -9,9 +9,7 @@
     "lib": ["dom", "deno.ns"]
   },
   "fmt": {
-    "files": {
-      "exclude": ["dist", "mem/dist", "linear-text"]
-    },
+    "files": { "exclude": ["dist", "linear-text"] },
     "options": { "semiColons": false, "singleQuote": true }
   },
   "imports": {
@@ -26,15 +24,9 @@
     "std/": "https://deno.land/std@0.179.0/"
   },
   "lint": {
-    "files": {
-      "exclude": ["dist", "mem/dist", "linear-text"]
-    },
+    "files": { "exclude": ["dist", "linear-text"] },
     "rules": { "exclude": ["no-empty-interface", "no-misused-new"] }
   },
   "lock": false,
-  "test": {
-    "files": {
-      "exclude": ["dist", "mem/dist", "linear-text"]
-    }
-  }
+  "test": { "files": { "exclude": ["dist", "linear-text"] } }
 }
