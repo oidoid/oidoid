@@ -2,14 +2,6 @@
 	path = 01
 	url = https://github.com/oidoid/01.git
 	branch = main
-[submodule "atlas-pack"]
-	path = atlas-pack
-	url = https://github.com/oidoid/atlas-pack.git
-	branch = main
-[submodule "demos/green-field"]
-	path = demos/green-field
-	url = https://github.com/oidoid/green-field-demo.git
-	branch = main
 [submodule "linear-text"]
 	path = linear-text
 	url = https://github.com/oidoid/linear-text.git
@@ -22,17 +14,9 @@
 	path = mem
 	url = https://github.com/oidoid/mem.git
 	branch = main
-[submodule "nttt"]
-	path = nttt
-	url = https://github.com/oidoid/nttt.git
-	branch = main
 [submodule "oidoid.com"]
 	path = oidoid.com
 	url = https://github.com/oidoid/oidoid.com.git
-	branch = main
-[submodule "ooz"]
-	path = ooz
-	url = https://github.com/oidoid/ooz.git
 	branch = main
 [submodule "solitaire"]
 	path = solitaire

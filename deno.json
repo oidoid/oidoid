@@ -2,31 +2,15 @@
   "compilerOptions": {
     "exactOptionalPropertyTypes": true,
     "noImplicitOverride": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "useUnknownInCatchVariables": true,
-    "lib": ["dom", "deno.ns"]
+    "noUncheckedIndexedAccess": true
   },
-  "fmt": {
-    "files": { "exclude": ["dist", "linear-text"] },
-    "options": { "semiColons": false, "singleQuote": true }
-  },
+  "fmt": { "semiColons": false, "singleQuote": true },
   "imports": {
-    "@/atlas-pack": "./atlas-pack/mod.ts",
-    "@/green-field": "./demos/green-field/mod.ts",
     "@/mem": "./mem/mod.ts",
-    "@/nttt": "./nttt/mod.ts",
-    "@/ooz": "./ooz/mod.ts",
     "@/solitaire": "./solitaire/mod.ts",
     "@/super-patience": "./super-patience/mod.ts",
     "@/void": "./void/mod.ts",
-    "std/": "https://deno.land/std@0.179.0/"
+    "std/": "https://deno.land/std@0.192.0/"
   },
-  "lint": {
-    "files": { "exclude": ["dist", "linear-text"] },
-    "rules": { "exclude": ["no-empty-interface", "no-misused-new"] }
-  },
-  "lock": false,
-  "test": { "files": { "exclude": ["dist", "linear-text"] } }
+  "lock": false
 }

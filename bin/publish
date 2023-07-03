@@ -1,0 +1,146 @@
+#!/usr/bin/env -S deno --quiet run --allow-read=.. --allow-run --allow-write=.. --ext ts
+import * as semver from 'std/semver/mod.ts'
+
+const configFilename = 'deno.json' // Relative PWD.
+const releases: Set<semver.ReleaseType> = new Set([
+  'pre',
+  'major',
+  'premajor',
+  'minor',
+  'preminor',
+  'patch',
+  'prepatch',
+  'prerelease',
+])
+
+Deno.exit(await main(Deno.args))
+
+async function main(args: string[]): Promise<number> {
+  const release = args[0]
+  if (release == null || !isRelease(release)) {
+    console.error(`release must be one of: ${[...releases].join(', ')}`)
+    return 1
+  }
+
+  const config = JSON.parse(await Deno.readTextFile(configFilename))
+  if (!isConfig(config)) {
+    console.error(`${configFilename} missing name or version fields`)
+    return 1
+  }
+
+  const next = semver.format(
+    semver.increment(semver.parse(config.version), release),
+  )
+
+  let out
+  out = await exec('git status -z')
+  if (!out.ok || !/^\s*$/.test(out.text)) {
+    prompt(
+      'uncommitted changes detected; <enter> to continue, <ctrl-c> to cancel:',
+    )
+  }
+
+  out = await exec('git remote update')
+  if (!out.ok) {
+    console.error(
+      'unable to update from remote; check connectivity and try again',
+    )
+    return 1
+  }
+
+  out = await exec('git rev-parse --abbrev-ref @')
+  const branch = out.text.trim()
+  if (!out.ok || !branch) {
+    console.error('the active branch cannot be identified')
+    return 1
+  }
+
+  out = await exec(`git rev-list -n1 @..origin/${branch}`)
+  if (!out.ok || !/^\s*$/.test(out.text)) {
+    console.error(
+      `the active branch is behind origin/${branch}; pull and try again`,
+    )
+    return 1
+  }
+
+  prompt('test the release; <enter> to continue, <ctrl-c> to cancel:')
+
+  out = await exec('git tag --list --sort version:refname v*')
+  if (!out.ok) {
+    console.error('failed to list tagged versions')
+    return 1
+  }
+
+  const gitVers = out.text.trim().split(/\s+/)
+  if (gitVers.some((ver) => `v${next}` === ver)) {
+    console.error(`git tag v${next} is unavailable`)
+    return 1
+  }
+
+  config.version = next
+  await Deno.writeTextFile(configFilename, JSON.stringify(config))
+
+  out = await exec(`deno fmt ${configFilename}`)
+  if (!out.ok) {
+    console.error(`cannot format ${configFilename}`)
+    return 1
+  }
+
+  out = await exec(`git add ${configFilename}`)
+  if (!out.ok) {
+    console.error(`cannot stage ${configFilename}`)
+    return 1
+  }
+
+  out = await exec(`git commit --message v${next}`)
+  if (!out.ok) {
+    console.error(`cannot commit ${configFilename}`)
+    return 1
+  }
+
+  prompt(
+    `ready to publish v${next}; amend commit with any changes wanted ` +
+      'before tagging; <enter> to continue, <ctrl-c> to cancel:',
+  )
+
+  out = await exec(`git tag v${next}`)
+  if (!out.ok) {
+    console.error(`cannot tag v${next}`)
+    return 1
+  }
+
+  // Push the active branch and tag.
+  out = await exec(`git push origin ${branch} v${next}`)
+  if (!out.ok) {
+    console.error(
+      `cannot publish ${branch} and v${next}; check connectivity and try ` +
+        `\`git push origin '${branch}' 'v${next}'\``,
+    )
+    return 1
+  }
+
+  return 0
+}
+
+async function exec(cmd: string): Promise<{ ok: boolean; text: string }> {
+  const [exe, ...args] = cmd.trim().split(/\s+/)
+  const out = await new Deno.Command(exe!, { args }).output()
+  const err = new TextDecoder().decode(out.stderr)
+  if (err) console.error(err)
+  return { ok: out.success, text: new TextDecoder().decode(out.stdout) }
+}
+
+function isRelease(str: string): str is semver.ReleaseType {
+  return releases.has(str as semver.ReleaseType)
+}
+
+function isConfig(val: unknown): val is Config {
+  if (!isObj(val)) return false
+  return typeof val.version === 'string' && typeof val.name === 'string'
+}
+
+type Config = { name: string; version: string }
+
+function isObj(val: unknown): val is Record<string | number | symbol, unknown> {
+  return val != null && typeof val === 'object'
+}

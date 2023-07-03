@@ -1,12 +1,8 @@
 {
   "deno.enable": true,
-  // [repos]
   "deno.enablePaths": [
-    "atlas-pack",
-    "demos",
+    "bin",
     "mem",
-    "nttt",
-    "ooz",
     "solitaire",
     "super-patience",
     "void"
